@@ -1,0 +1,14 @@
+# Raw datasets - large, regeneratable from source links in README
+city_day/
+Fire_dataset/
+Weather_dataset/
+Wind_dataset/
+
+# Intermediate outputs - regeneratable by re-running the notebooks
+Individual_cleaned_datasets/
+
+# Final deliverable - intentionally excluded for now, added manually at project end
+Master_cleaned_dataset/
+
+# Jupyter clutter
+.ipynb_checkpoints/
