@@ -1,45 +1,63 @@
-<div align="center">
-
 # 🌍 Delhi AQI Analytics & Forecasting
 
-### Investigating the Impact of Biomass Burning and Meteorological Conditions on Delhi's Air Quality
-
-**End-to-End Data Analytics Project | ETL | EDA | Statistical Analysis | Machine Learning | Explainable AI**
+> **An End-to-End Data Analytics Project Investigating the Impact of Biomass Burning and Meteorological Conditions on Delhi's Air Quality**
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-![Scikit Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
-![SHAP](https://img.shields.io/badge/Explainable_AI-SHAP-red?style=for-the-badge)
-![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![SHAP](https://img.shields.io/badge/SHAP-Explainable_AI-blue?style=for-the-badge)
 
 ---
 
-*A research-oriented analytics project that integrates pollution, fire activity and weather datasets to understand the factors influencing Delhi's next-day Air Quality Index (AQI).*
+## 📌 Overview
 
-</div>
+Delhi experiences severe air pollution due to a combination of environmental and human activities. While crop residue burning is often considered a major contributor, meteorological conditions such as wind, humidity and temperature also influence pollution accumulation.
 
----
-
-# 📌 Business Problem
-
-Delhi frequently experiences hazardous air pollution. While crop residue burning is widely considered a major contributor, meteorological conditions such as wind, humidity and temperature also influence pollutant accumulation.
-
-Understanding the relative contribution of these factors is essential for improving environmental decision-making and short-term AQI forecasting.
+This project develops an end-to-end data analytics workflow that integrates pollution, fire activity and weather datasets to understand the factors affecting Delhi's Air Quality Index (AQI). The analysis is extended with predictive analytics to forecast the next day's AQI and explain model predictions using SHAP.
 
 ---
 
-# 🎯 Project Objectives
+## 📊 Project Summary
 
-- Integrate multiple environmental datasets into a unified analytical dataset.
-- Analyze seasonal and temporal pollution trends.
-- Quantify the influence of biomass burning on Delhi's AQI.
-- Study the role of meteorological conditions in pollution accumulation.
-- Forecast next-day AQI using Machine Learning.
-- Explain model predictions using Explainable AI (SHAP).
+| Attribute | Details |
+|-----------|----------|
+| Domain | Environmental Data Analytics |
+| Study Area | Delhi, India |
+| Study Period | Jan 2015 – Jul 2020 |
+| Data Sources | CPCB, NASA FIRMS, ERA5 Wind & Weather |
+| Final Dataset | 1,847 Daily Records |
+| Engineered Features | 25 |
+| Target Variable | Next-Day AQI |
+| Best Model | Random Forest Regressor |
+| R² Score | **0.8767** |
 
 ---
 
-# 🔄 Project Workflow
+## 🎯 Objectives
+
+- Integrate multiple environmental datasets into a single analytical dataset.
+- Analyze seasonal and temporal pollution patterns.
+- Measure the relationship between biomass burning and AQI.
+- Evaluate the influence of meteorological conditions on pollution.
+- Build an interpretable model to forecast next-day AQI.
+
+---
+
+## 🛠 Skills Demonstrated
+
+- ETL Pipeline
+- Data Cleaning & Integration
+- Exploratory Data Analysis (EDA)
+- Statistical Analysis
+- Feature Engineering
+- Predictive Analytics
+- Explainable AI (SHAP)
+- Data Visualization
+- Git & GitHub
+
+---
+
+## 🔄 Project Workflow
 
 <p align="center">
 <img src="images/project_workflow.png" width="900">
@@ -47,9 +65,18 @@ Understanding the relative contribution of these factors is essential for improv
 
 ---
 
-# ⚙️ ETL Pipeline
+## ⚙️ ETL Pipeline
 
-Four independent real-world datasets were collected, cleaned and merged into a single day-level analytical dataset.
+Four independent real-world datasets were extracted, cleaned, transformed and aggregated to daily observations before being merged into a unified analytical dataset.
+
+The ETL process included:
+
+- Missing value handling
+- Unit conversion
+- Date standardization
+- Daily aggregation
+- Dataset integration
+- Feature preparation
 
 <p align="center">
 <img src="images/etl_pipeline.png" width="900">
@@ -58,37 +85,66 @@ Four independent real-world datasets were collected, cleaned and merged into a s
 ### Data Sources
 
 | Dataset | Purpose |
-|---------|---------|
-| CPCB Air Quality | Daily AQI and PM2.5 |
-| NASA FIRMS | Biomass Burning Activity |
+|----------|---------|
+| CPCB Air Quality | AQI & PM2.5 |
+| NASA FIRMS | Fire Activity |
 | ERA5 Wind | Wind Transport |
 | ERA5 Weather | Temperature & Humidity |
 
 ---
 
-# 📊 Exploratory Data Analysis
+## 📈 Exploratory Data Analysis
 
-Exploratory analysis revealed strong seasonal behaviour in Delhi's pollution levels.
+The exploratory analysis focused on understanding seasonal pollution trends and identifying relationships between environmental variables.
 
-Winter months consistently recorded the highest AQI, while the monsoon season showed the lowest pollution due to rainfall and improved atmospheric dispersion.
+Key analyses included:
+
+- Seasonal AQI Trends
+- Monthly Pollution Distribution
+- Fire Activity Trends
+- Weather Analysis
+- Correlation Analysis
+
+### Seasonal AQI Trend
 
 <p align="center">
 <img src="images/seasonal_aqi_trend.png" width="850">
 </p>
 
+**Observation**
+
+- Winter recorded the highest AQI due to stagnant atmospheric conditions.
+- Monsoon showed the lowest pollution because rainfall improved pollutant dispersion.
+
 ---
 
-Correlation analysis was performed to understand relationships between pollution indicators, fire activity and meteorological variables.
+### Correlation Analysis
 
 <p align="center">
 <img src="images/correlation_heatmap.png" width="850">
 </p>
 
+**Observation**
+
+Historical AQI features showed the strongest correlation with future AQI, while weather variables demonstrated stronger relationships than fire activity alone.
+
 ---
 
-# 🛠 Feature Engineering
+## 📊 Statistical Analysis
 
-Several predictive variables were created to improve forecasting performance.
+Statistical validation was performed to evaluate relationships between pollution, fire activity and meteorological variables.
+
+The analysis indicated that:
+
+- Weather variables consistently influenced AQI variation.
+- Fire activity provided additional predictive information during high-burning periods.
+- Historical pollution remained the strongest predictor of next-day AQI.
+
+---
+
+## 🧩 Feature Engineering
+
+Domain-specific features were created to improve forecasting performance.
 
 ### Temporal Features
 
@@ -120,29 +176,17 @@ Several predictive variables were created to improve forecasting performance.
 
 ---
 
-# 📈 Statistical Analysis
-
-Feature relationships were validated using Pearson correlation and environmental feature importance.
-
-The analysis indicates that **meteorological variables contribute more consistently than fire-related variables** in predicting Delhi's next-day AQI.
-
-<p align="center">
-<img src="images/feature_importance.png" width="850">
-</p>
-
----
-
-# 🤖 Machine Learning
+## 🤖 Predictive Analytics
 
 Three regression models were evaluated.
 
 | Model | Purpose |
-|--------|---------|
-| Linear Regression | Baseline Model |
+|--------|----------|
+| Linear Regression | Baseline |
 | Random Forest | Final Model |
 | XGBoost | Performance Comparison |
 
-### Final Model Performance
+### Model Performance
 
 | Metric | Score |
 |---------|-------|
@@ -150,62 +194,57 @@ Three regression models were evaluated.
 | RMSE | 39.63 |
 | R² Score | **0.8767** |
 
----
-
-# 🔍 Explainable AI
-
-Model predictions were interpreted using SHAP (SHapley Additive exPlanations).
-
-Unlike conventional feature importance, SHAP explains both the magnitude and direction of each feature's contribution, making the model transparent and interpretable.
+### Actual vs Predicted AQI
 
 <p align="center">
-<img src="images/shap_summary.png" width="900">
+<img src="images/actual_vs_predicted.png" width="850">
 </p>
 
 ---
 
-# 📉 Model Performance
+## 🔍 Model Explainability
 
-The Random Forest model closely follows the observed AQI trend and successfully captures both seasonal behaviour and short-term pollution fluctuations.
+SHAP (SHapley Additive Explanations) was used to interpret model predictions and identify the contribution of each feature.
 
 <p align="center">
-<img src="images/actual_vs_predicted.png" width="900">
+<img src="images/shap_summary.png" width="850">
 </p>
 
----
-
-# 💡 Key Findings
-
-- Delhi experiences severe seasonal pollution, with winter months recording the highest AQI.
-- Dew point, seasonal variation and wind speed were the strongest environmental predictors.
-- Biomass burning contributes additional predictive information, particularly during high-burning periods.
-- Integrating pollution, fire activity and weather data improves forecasting compared with using pollution history alone.
-- SHAP analysis provides transparent explanations for each prediction, improving model interpretability.
+The analysis confirmed that historical AQI, dew point, seasonal variation and wind speed were among the most influential variables affecting next-day AQI.
 
 ---
 
-# 🚀 Future Enhancements
+## 💡 Key Insights
+
+- Delhi experiences severe seasonal pollution, particularly during winter.
+- Meteorological conditions influence AQI more consistently than fire activity alone.
+- Biomass burning improves prediction accuracy during agricultural burning periods.
+- Integrating pollution, weather and fire datasets provides better forecasting than using pollution history alone.
+- SHAP improves model transparency by explaining individual predictions.
+
+---
+
+## 🚀 Future Enhancements
 
 - Automate data collection using CPCB, NASA FIRMS and ERA5 APIs.
-- Develop a daily ETL pipeline.
+- Build a scheduled ETL pipeline for daily updates.
 - Deploy an interactive Streamlit dashboard.
-- Enable automated next-day AQI prediction.
+- Enable automated next-day AQI forecasting.
 - Retrain the model periodically using newly available data.
 
 ---
 
-# 📂 Repository Structure
+## 📂 Repository Structure
 
-```text
-Delhi-AQI-Analytics-and-Forecasting
+```
+Delhi-AQI-Analytics-and-Forecasting/
 │
-├── data
-│   ├── raw_data.zip
-│   └── README.md
+├── data/
+│   ├── README.md
+│   └── raw_data.zip
 │
-├── images
-│
-├── notebooks
+├── images/
+├── notebooks/
 │   ├── 01_Data_Understanding.ipynb
 │   ├── 02_Data_Preprocessing.ipynb
 │   ├── 03_Exploratory_Data_Analysis.ipynb
@@ -216,15 +255,15 @@ Delhi-AQI-Analytics-and-Forecasting
 │
 ├── requirements.txt
 ├── README.md
-└── .gitignore
+└── LICENSE
 ```
 
 ---
 
-# ⚡ Installation
+## ⚡ Installation
 
 ```bash
-git clone https://github.com/<your-username>/Delhi-AQI-Analytics-and-Forecasting.git
+git clone https://github.com/Akash-0012/Delhi-AQI-Analytics-and-Forecasting.git
 
 cd Delhi-AQI-Analytics-and-Forecasting
 
@@ -239,28 +278,29 @@ Run the notebooks sequentially:
 
 ---
 
-# 📚 Data Sources
+## 📚 Data Sources
 
 - Central Pollution Control Board (CPCB)
 - NASA FIRMS
 - Copernicus Climate Data Store (ERA5)
 
+Detailed download instructions are available in **`data/README.md`**.
+
 ---
 
-# 👨‍💻 Author
+## 👨‍💻 Author
 
 **Akash Singh**
 
-MCA Student | Data Analytics | Machine Learning
+Aspiring Data Analyst | Python | SQL | Machine Learning
 
-GitHub: https://github.com/<your-username>
-
-LinkedIn: https://linkedin.com/in/<your-profile>
+- GitHub: https://github.com/Akash-0012
+- LinkedIn: *(Add your LinkedIn profile URL)*
 
 ---
 
-## ⭐ If you found this project useful, consider giving it a star!
-
 ## 📄 License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+⭐ If you found this project useful, consider giving it a star!
