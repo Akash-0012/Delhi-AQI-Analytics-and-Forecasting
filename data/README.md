@@ -321,3 +321,15 @@ Intermediate datasets are generated automatically and therefore are **not includ
 - Copernicus Climate Data Store (ERA5)
 
 Please refer to the respective providers for licensing and data usage policies.
+
+## Dataset Licensing
+
+This repository includes code developed by the author under the MIT License.
+
+The datasets used in this project are provided by their respective organizations and remain subject to their original licenses and terms of use.
+
+- CPCB Air Quality Data (via Kaggle)
+- NASA FIRMS
+- Copernicus Climate Data Store (ERA5)
+
+Users should refer to the original data providers for licensing and redistribution policies.
